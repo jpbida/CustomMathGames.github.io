@@ -1,0 +1,101 @@
+body {
+  background:black;
+  margin:0;
+}
+.icon {
+  display:inline-block;
+  position:relative;
+}
+.icon-large {
+  width:64px;
+  height:64px;
+}
+.icon-medium {
+  width:48px;
+  height:48px;
+}
+.icon-small {
+  width:32px;
+  height:32px;
+}
+.icon-fill {
+    width:60%;
+    height:60%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+        -ms-transform:translate(-50%, -50%);
+            transform:translate(-50%, -50%);
+    font-size:0;
+}
+.icon-text {
+    width: 1.8vw;
+    height: 1.8vw;
+    position: relative;
+    top: 0.1vw;
+    margin: 0 0.3vw;
+}
+.icon-quarter {
+    width:44%;
+    height:44%;
+    display:inline-block;
+    margin:3%;
+}
+.icon-text-height {
+    width:8vw;
+    height:8vw;
+    top:1.2vw; /* Relative positioning because of .icon */
+    margin:0 -2vw;
+}
+#problemIcon .icon-fill {
+    display:none;
+}
+#problemIcon.operation-1 .icon-fill:nth-of-type(1) {
+    display:block;
+}
+#problemIcon.operation-2 .icon-fill:nth-of-type(2) {
+    display:block;
+}
+#problemIcon.operation-3 .icon-fill:nth-of-type(3) {
+    display:block;
+}
+#problemIcon.operation-4 .icon-fill:nth-of-type(4) {
+    display:block;
+}
+.addition-1, .multiplication-1, .subtraction-1, .division-2 {
+  width:100%;
+  height:20%;
+  background:white;
+  position:absolute;
+  top:50%;
+  margin-top:-10%;
+}
+.addition-2, .multiplication-2 {
+  height:100%;
+  width:20%;
+  background:white;
+  position:absolute;
+  right:50%;
+  margin-right:-10%;
+}
+.multiplication-1, .multiplication-2 {
+  -webkit-transform:rotate(45deg);
+      -ms-transform:rotate(45deg);
+          transform:rotate(45deg);
+}
+.division-1, .division-3 {
+  width:20%;
+  height:20%;
+  border-radius:999px;
+  background:white;
+  position:absolute;
+  top:15%;
+  left:50%;
+  margin-left:-10%;
+  margin-top:-10%;
+}
+.division-3 {
+  top:75%;
+  margin-top:0%;
+}

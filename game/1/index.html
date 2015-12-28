@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>Math Facts Game</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="styles/icons.css">
+        <link rel="stylesheet" href="styles/game.css">
+    </head>
+    <body>
+        <!-- Operation selection screen -->
+        <div class="operationSelect centered noHighlight">
+            <span class="header">Select an Operation:</span>
+            <div class="optionsWrapper">
+                <div class="option" data-operationType="addition" data-animationDist="0">
+                    <div class="icon icon-fill">
+                        <div class="addition-1"></div>
+                        <div class="addition-2"></div>
+                    </div>
+                </div>
+                <div class="option" data-operationType="subtraction" data-animationDist="1">
+                    <div class="icon icon-fill">
+                        <div class="subtraction-1"></div>
+                    </div>
+                </div>
+                <div class="option" data-operationType="multiplication" data-animationDist="2">
+                    <div class="icon icon-fill">
+                        <div class="multiplication-1"></div>
+                        <div class="multiplication-2"></div>
+                    </div>
+                </div>
+                <div class="option" data-operationType="division" data-animationDist="3">
+                    <div class="icon icon-fill">
+                        <div class="division-1"></div>
+                        <div class="division-2"></div>
+                        <div class="division-3"></div>
+                    </div>
+                </div>
+                <div class="option" data-operationType="mixed" data-animationDist="4">
+                    <div class="icon icon-fill">
+                        <div class="icon icon-quarter">
+                            <div class="addition-1"></div>
+                            <div class="addition-2"></div>
+                        </div>
+                        <div class="icon icon-quarter">
+                            <div class="subtraction-1"></div>
+                        </div>
+                        <div class="icon icon-quarter">
+                            <div class="multiplication-1"></div>
+                        <div class="multiplication-2"></div>
+                        </div>
+                        <div class="icon icon-quarter">
+                            <div class="division-1"></div>
+                            <div class="division-2"></div>
+                            <div class="division-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Game start countdown text (text set in game.js) -->
+        <div class="startTimer centered noHighlight"></div>
+        
+        <!-- Problem & input -->
+        <div class="problemWrapper centered noHighlight">
+            <div class="problemText">
+                <span id="firstNum">5</span>
+                <div id="problemIcon" class="icon icon-text-height operation-2">
+                    <div class="additionWrapper icon-fill">
+                        <div class="addition-1"></div>
+                        <div class="addition-2"></div>
+                    </div>
+                    <div class="subtractionWrapper icon-fill">
+                        <div class="subtraction-1"></div>
+                    </div>
+                    <div class="multiplicationWrapper icon-fill">
+                        <div class="multiplication-1"></div>
+                        <div class="multiplication-2"></div>
+                    </div>
+                    <div class="divisionWrapper icon-fill">
+                        <div class="division-1"></div>
+                        <div class="division-2"></div>
+                        <div class="division-3"></div>
+                    </div>
+                </div>
+                <span id="secondNum">3</span>
+                =
+                <input type="text" id="answerInput">
+            </div>
+        </div>
+        
+        <!-- Score counter -->
+        <div class="scoreCounter noHighlight">Score: <span class="scoreNum">0</span></div>
+        
+        <!-- Timer -->
+        <div class="timeDisp noHighlight"></div>
+        
+        <!-- Correct/Incorrect Text -->
+        <div id="answerResult">
+            <span class="correctText">Correct</span>
+            <span class="incorrectText">Incorrect</span>
+        </div>
+        
+        <!-- Play again button -->
+        <div id="playAgainButton" class="bottomButton noHighlight">
+            Play Again
+        </div>
+        
+        <!-- View missed button -->
+        <div id="viewMissedButton" class="bottomButton noHighlight">
+            View Missed Problems
+        </div>
+        
+        <!-- List of missed problems -->
+        <div id="missedList" class="centered hidden">
+            <h2>Missed Problems</h2>
+            <table>
+                <tr>
+                    <td>Correct Answer</td>
+                    <td>Your Answer</td>
+                </tr>
+                <tr>
+                    <td>5 x 3 = <span>15</span></td>
+                    <td><span>8</span></td>
+                </tr>
+                <tr>
+                    <td>5 x 3 = <span>15</span></td>
+                    <td><span>8</span></td>
+                </tr>
+                <tr>
+                    <td>5 x 3 = <span>15</span></td>
+                    <td><span>8</span></td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Game scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="game.js"></script>
+    </body>
+</html>

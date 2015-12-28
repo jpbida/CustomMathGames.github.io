@@ -1,0 +1,193 @@
+body {
+    background:#1B1F26;
+    overflow:hidden;
+}
+
+.centered {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+.noHighlight {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:default;
+}
+.operationSelect {
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    margin-top:-3vw;
+    opacity:0;
+}
+.operationSelect .header {
+    font-size:6.7vw;
+    text-align:center;
+    margin:0 auto;
+    
+    position:relative;
+}
+.optionsWrapper {
+    margin-top:2vw;
+    width:60vw;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+}
+.option {
+    width:10vw;
+    height:10vw;
+    border:4px solid rgba(0,0,0,0.5);
+    border-radius:2vw;
+    font-size:1.5vw;
+    cursor:pointer;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    position:relative;
+}
+.option:hover {
+    background:rgba(0,0,0,0.5);
+}
+
+.startTimer {
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:8vw;
+}
+.problemWrapper {
+    display:none; /* Later changed by game.js */
+}
+.problemText {
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:8vw;
+    line-height:0;
+}
+#answerInput {
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:8vw;
+    border:4px solid rgba(0,0,0,0.5);
+    border-radius:2vw;
+    background:transparent;
+    width:14vw;
+    outline:none;
+    padding:1vw 2vw;
+}
+#answerInput:focus {
+    background:rgba(0,0,0,0.5);
+}
+.scoreCounter {
+    position:fixed;
+    top:-8vw;
+    right:2vw;
+    text-align:right;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:4vw;
+    transform:translate(0,0);
+    transition:transform 0.4s;
+}
+.timeDisp {
+    position:fixed;
+    top:-8vw;
+    left:2vw;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:4vw;
+}
+#answerResult {
+    position:fixed;
+    top:-8vw;
+    left:50%;
+    -webkit-transform:translate(-50%, 0);
+        -ms-transform:translate(-50%, 0);
+            transform:translate(-50%, 0);
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:4vw;
+    
+    transition:0.2s ease-in-out;
+}
+#answerResult.showing {
+    top:2vw;
+}
+#answerResult .incorrectText {
+    display:block;
+}
+#answerResult .correctText {
+    display:none;
+}
+#answerResult.correct .incorrectText {
+    display:none;
+}
+#answerResult.correct .correctText {
+    display:block;
+}
+.incorrectText {
+    color:#FF5959;
+}
+.bottomButton {
+    border:4px solid rgba(0,0,0,0.5);
+    border-radius:2vw;
+    font-size:1.5vw;
+    position:absolute;
+    bottom:-8vw;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    padding:1vw 2vw;
+    cursor:pointer;
+}
+.bottomButton:hover {
+    background:rgba(0,0,0,0.5);
+}
+#playAgainButton {
+    right:2vw;
+}
+#viewMissedButton {
+    left:2vw;
+}
+#missedList {
+    background:#0D0F13;
+    border:4px solid #060709;
+    border-radius:2vw;
+    padding:1vw 2vw;
+    width:40vw;
+    height:60vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+    
+    transition:top 0.2s ease-out;
+}
+#missedList.hidden {
+    top:-50%;
+}
+#missedList table {
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:2.5vw;
+    width:100%;
+}
+#missedList h2 {
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:3.5vw;
+    margin:0;
+    text-align:center;
+}
+#missedList table tr td:nth-of-type(1) span {
+    color:#88FF59;
+}
+#missedList table tr td:nth-of-type(2) {
+    text-align:right;
+}
+#missedList table tr td:nth-of-type(2) span {
+    color:#FF5959;
+}
