@@ -1,17 +1,75 @@
 <html>
-    <head>
-        <title>Custom Math Games</title>
-        <style>
-            div {
-                position:absolute;
-                top:50%;
-                left:50%;
-                transform: translate(-50%, -50%);
-                font-family:Arial, Helvetica, sans-serif;
-            }
-        </style>
-    </head>
-    <body>
-        <div>This page is a work in progress. Check back in a few days!</div>
-    </body>
+
+<head>
+  <title>Custom Math Games</title>
+  <link rel="stylesheet" href="homepage/style.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <div id="logoWrapper">
+      <a href="#" id="logoLink">
+        <img src="homepage/CMG-logo.png" alt="Custom math Games" id="logoImg" />
+      </a>
+    </div>
+    <ul>
+      <!-- Weird formatting is to prevent terrible inline-block spacing -->
+      <li>
+        <a data-scroll href="#pageHeader">About</a></li>/
+      <li>
+        <a data-scroll href="#ideasAnchor">Ideas</a></li>/
+      <li>
+        <a data-scroll href="#priceWrapper">Pricing</a></li>/
+      <li>
+        <a data-scroll href="#contactWrapper">Contact</a></li>
+    </ul>
+    <div id="siteName">Custom&nbsp;&nbsp;Math&nbsp;&nbsp;Games</div>
+  </nav>
+
+  <div id="pageHeader">
+    <h1>We provide custom-tailored math games at an unbeatable price, designed specifically to meet your students' needs</h1>
+  </div>
+  <div id="ideasAnchor"></div>
+  <div id="boxesWrapper">
+    <div class="box">
+      <div class="icon">&#xe900;</div>
+      <div class="boxHeader">Scoring System</div>
+      <div class="boxContent">Do you have a special way of scoring students? We can create a customized game which does it for you.</div>
+    </div>
+    <div class="box">
+      <div class="icon">&#xe901;</div>
+      <div class="boxHeader">Personalized Content</div>
+      <div class="boxContent">Want a game which includes your name in special messages, or even the names of your students? We have you covered.</div>
+    </div>
+    <div class="box">
+      <div class="icon">&#xe902;</div>
+      <div class="boxHeader">A Whole New Game</div>
+      <div class="boxContent">Have an idea for a brand new way to teach math? We can create a totally custom game with mechanics just how you want them.</div>
+    </div>
+  </div>
+  <!--<div id="quoteWrapper">
+    <div id="quoteMark">&ldquo;</div>
+    <div id="quoteMarkBottom">&rdquo;</div>
+    <div id="quoteInner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic amet facilis deleniti quasi culpa minima eum repellat, eius, perspiciatis doloribus, laudantium. Sapiente dolores explicabo unde dolor a odit, corporis libero nam esse, repellendus harum, necessitatibus!</div>
+    <div id="quotePerson">- John Smith, 3rd Grade Teacher</div>
+  </div>-->
+  <div id="priceWrapper">
+    <h3 id="priceHeader">Prices starting as low as </h3>
+    <div id="priceSubheader">price will be negotiated on a per-project basis</div>
+    <h3 id="priceNum"><span class="darkText">$</span><span class="lightText">99</span></h3>
+  </div>
+  <div id="contactWrapper">
+    <div id="contactButton">
+      <span id="largeText">Contact Us</span>
+      <span id="smallText">to request a project</span>
+    </div>
+    <div id="contactPopup"></div>
+    <div id="copyConfirm">Email copied to clipboard!</div>
+  </div>
+  
+  <script src="homepage/smooth-scroll.js"></script>
+  <script src="homepage/clipboard.min.js"></script>
+  <script src="homepage/script.js"></script>
+</body>
+
 </html>
