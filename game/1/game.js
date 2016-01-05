@@ -158,11 +158,11 @@ function initGame() {
         }
         var keepKeys = [8, 37, 38, 39, 40, 46]
         if(keepKeys.indexOf(key) > -1) { return; } // Keys we want to keep normal
+        e.preventDefault();
         if(key === 13) {
             submitAnswer();
             return;
         } // Enter
-        e.preventDefault();
         var allowedChars = "0123456789";
         var pos = getCursorPosition($(this));
         var string = $(this).val();
@@ -266,6 +266,14 @@ function setProblem() {
     }
     
     $("#answerInput").val("");
+    
+    // 100% hack solution to strange and uncommon bug
+    window.setTimeout(function(){
+        if($("#answerInput").val() !== "") {
+            setProblem();
+        }
+    }, 10);
+    // I deserve to be hung
 }
 
 function submitAnswer() {
