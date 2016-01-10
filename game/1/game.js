@@ -1,6 +1,6 @@
 // TODO: "Play again" animation
 
-var selectedOperation, fact_tri, availableFacts, correctAnswer, fact, timerStart, resultTextTimeout, missedProblems;
+var selectedOperation, fact_tri, availableFacts, correctAnswer, fact, timerStart, resultTextTimeout, missedProblems, previousProblem = [0,0,0];
 var missedShowing = false;
 var score = 0;
 
@@ -205,34 +205,31 @@ function pickFact() {
     }
     
     var selectedProblem;
+    var problemNumber;
     switch(selectedOperationTmp) {
         case 0:
-            var problemNumber = Math.floor(Math.random()*availableFacts.add.length);
+            problemNumber = Math.floor(Math.random()*availableFacts.add.length);
             selectedProblem = fact_tri.add[availableFacts.add[problemNumber]];
             availableFacts.add.splice(problemNumber, 1);
             break;
         case 1:
-            var problemNumber = Math.floor(Math.random()*availableFacts.sub.length);
+            problemNumber = Math.floor(Math.random()*availableFacts.sub.length);
             selectedProblem = fact_tri.add[availableFacts.sub[problemNumber]];
             availableFacts.sub.splice(problemNumber, 1);
             break;
         case 2:
-            var problemNumber = Math.floor(Math.random()*availableFacts.mult.length);
+            problemNumber = Math.floor(Math.random()*availableFacts.mult.length);
             selectedProblem = fact_tri.mult[availableFacts.mult[problemNumber]];
             availableFacts.mult.splice(problemNumber, 1);
             break;
         case 3:
-            var problemNumber = Math.floor(Math.random()*availableFacts.div.length);
+            problemNumber = Math.floor(Math.random()*availableFacts.div.length);
             selectedProblem = fact_tri.mult[availableFacts.div[problemNumber]];
             availableFacts.div.splice(problemNumber, 1);
             break;
         default:
             console.log("Error: Selected Operation not valid");
             break;
-    }
-    
-    if(selectedProblem === undefined) {
-        return pickFact(); // I have no shame
     }
     
     if(availableFacts.add.length == 0 ||
@@ -242,6 +239,16 @@ function pickFact() {
         resetFactTris();
     }
     
+    if(selectedProblem === undefined) {
+        console.log(availableFacts);
+        console.log(problemNumber);
+        return pickFact(); // I have no shame
+    } else if(previousProblem[0] === selectedProblem[0] && previousProblem[1] === selectedProblem[1] && previousProblem[2] === selectedProblem[2]) {
+       console.log("new problem was identical to previous, so we tried again (somewhere around line 235)");
+       return pickFact(); 
+    }
+    
+    previousProblem = selectedProblem;
     return {
         fact_tri: selectedProblem,
         operation: selectedOperationTmp
@@ -266,14 +273,6 @@ function setProblem() {
     }
     
     $("#answerInput").val("");
-    
-    // 100% hack solution to strange and uncommon bug
-    window.setTimeout(function(){
-        if($("#answerInput").val() !== "") {
-            setProblem();
-        }
-    }, 10);
-    // I deserve to be hung
 }
 
 function submitAnswer() {
